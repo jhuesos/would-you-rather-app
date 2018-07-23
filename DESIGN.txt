@@ -5,11 +5,16 @@ ROUTES
 /questions/:question_id
 /404
 /add
-/leaderbord
+/leaderboard
 
 FUNCTIONALITY
 - login, logout
 - questions sorted from new to old
 - navigation bar
 - can't change their answer once is done. vote once per question
-- 
+-
+
+HOME
+- questions and unsanswered questions
+
+LOgin SCREENS : nothing reusable
