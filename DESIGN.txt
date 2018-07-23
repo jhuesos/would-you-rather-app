@@ -1,0 +1,15 @@
+ROUTES
+
+/
+/login
+/questions/:question_id
+/404
+/add
+/leaderbord
+
+FUNCTIONALITY
+- login, logout
+- questions sorted from new to old
+- navigation bar
+- can't change their answer once is done. vote once per question
+- 
