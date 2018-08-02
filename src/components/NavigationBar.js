@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// TODO: add user profile and logout link
+
 export default () => (
   <nav>
     <ul>
