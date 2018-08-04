@@ -12,6 +12,7 @@ import Login from './components/Login';
 import NewQuestion from './components/NewQuestion';
 import { handleUsers } from './actions/users';
 import { handleQuestions } from './actions/questions';
+import QuestionPage from './components/QuestionPage';
 
 
 class App extends Component {
@@ -24,7 +25,6 @@ class App extends Component {
 
   render() {
     const { isUserAuth } = this.props;
-    console.log(isUserAuth)
 
     return (
       <Router>
@@ -33,16 +33,19 @@ class App extends Component {
 
           <div className="App">
             {!isUserAuth ? null :
-              <Fragment>
+              <header>
                 <NavBar></NavBar>
                 <hr />
-              </Fragment>
+              </header>
             }
 
-            <Route exact path="/" component={RequireAuth(Dashboard)} />
-            <Route path="/leaderboard" component={RequireAuth(Leaderboard)} />
-            <Route path="/login" component={Login} />
-            <Route path="/add" component={RequireAuth(NewQuestion)} />
+            <div className="app-main">
+              <Route exact path="/" component={RequireAuth(Dashboard)} />
+              <Route path="/leaderboard" component={RequireAuth(Leaderboard)} />
+              <Route path="/login" component={Login} />
+              <Route path="/add" component={RequireAuth(NewQuestion)} />
+              <Route path="/question/:id" component={RequireAuth(QuestionPage)} />
+            </div>
           </div>
         </Fragment>
       </Router>

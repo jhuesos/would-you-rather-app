@@ -6,4 +6,4 @@ export default handleActions({
   // identity function. We pass it here as en example
   [logIn]: (state, action) => ({ userId: action.payload }),
   [logOut]: () => ({ userId: null }),
-}, { userId: null });
+}, { userId: 'sarahedo' });
