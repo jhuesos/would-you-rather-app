@@ -35,4 +35,10 @@ a.active {
   .user-profile, .question {
     display: inline-block;
   }
+
+  .question-answered {
+    .chosen {
+      font-weight: bold;
+    }
+  }
 }

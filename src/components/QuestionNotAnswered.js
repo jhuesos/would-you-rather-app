@@ -11,6 +11,7 @@ class QuestionNotAnswered extends Component {
 
     const { handleAnswerQuestion, question } = this.props;
     handleAnswerQuestion(question.id, this.state.answer);
+
   }
 
   handleChange = ({ target }) => {
@@ -20,8 +21,9 @@ class QuestionNotAnswered extends Component {
   }
 
   render() {
-    const { userName, avatarURL, question } = this.props;
+    const { userName, avatarURL, question, history } = this.props;
     const { answer } = this.state;
+    console.log(history)
 
     return (
       <QuestionLayout userName={userName} avatarURL={avatarURL}>
