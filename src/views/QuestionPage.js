@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import QuestionNotAnswered from './QuestionNotAnswered';
+import QuestionNotAnswered from '../components/QuestionNotAnswered';
 import { handleAnswerQuestions } from '../actions/questions';
-import QuestionAnswered from './QuestionAnswered';
+import QuestionAnswered from '../components/QuestionAnswered';
 
 class QuestionPage extends Component {
   handleAnswerQuestion = (questionId, answer) => {

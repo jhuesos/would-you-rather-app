@@ -4,15 +4,17 @@ import { connect } from 'react-redux';
 // FIXME: loading bar is not shown
 import { LoadingBar } from 'react-redux-loading';
 
-import NavBar from './components/NavigationBar';
-import Dashboard from './components/Dashboard';
-import Leaderboard from './components/Leaderboard';
-import RequireAuth from './components/RequireAuth';
-import Login from './components/Login';
-import NewQuestion from './components/NewQuestion';
 import { handleUsers } from './actions/users';
 import { handleQuestions } from './actions/questions';
-import QuestionPage from './components/QuestionPage';
+
+import Login from './views/Login';
+import Dashboard from './views/Dashboard';
+import Leaderboard from './views/Leaderboard';
+import NewQuestion from './views/NewQuestion';
+import QuestionPage from './views/QuestionPage';
+
+import NavBar from './components/NavigationBar';
+import RequireAuth from './components/RequireAuth';
 
 
 class App extends Component {

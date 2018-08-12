@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import QuestionOverview from './QuestionOverview';
+import QuestionOverview from '../components/QuestionOverview';
 import { getAnsweredQuestions, getUnansweredQuestions } from '../selectors';
 
 class Dashboard extends Component {
