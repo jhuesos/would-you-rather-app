@@ -4,7 +4,7 @@ import QuestionLayout from './QuestionLayout';
 
 export default ({ userName, avatarURL, question, id }) => (
   <NavLink exact to={`/question/${id}`}>
-    <QuestionLayout userName={userName} avatarURL={avatarURL}>
+    <QuestionLayout userName={userName} avatarURL={avatarURL} title={`${userName} asks:`}>
       <b>Would you rather</b> ...{question}...
     </QuestionLayout>
   </NavLink>

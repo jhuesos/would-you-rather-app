@@ -26,7 +26,7 @@ class QuestionNotAnswered extends Component {
     console.log(history)
 
     return (
-      <QuestionLayout userName={userName} avatarURL={avatarURL}>
+      <QuestionLayout userName={userName} avatarURL={avatarURL} title={`${userName} asks:`}>
         <Fragment>
           <h2>Would you rather...</h2>
           <form onSubmit={this.handleSubmit}>

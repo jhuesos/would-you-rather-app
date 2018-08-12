@@ -26,7 +26,7 @@ const QuestionAnswered = ({ userName, avatarURL, question, userId }) => {
   const { optionOne, optionTwo, total } = votesInfo;
 
   return (
-    <QuestionLayout userName={userName} avatarURL={avatarURL}>
+    <QuestionLayout userName={userName} avatarURL={avatarURL} title={`${userName} asks:`}>
       <Fragment>
         <h2>Would you rather... (Votes: {total})</h2>
         <div className="question-answered">

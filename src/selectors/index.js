@@ -33,3 +33,20 @@ export const getUnansweredQuestions = getQuestionsSelector(
     !optionOne.votes.includes(userId) && !optionTwo.votes.includes(userId)
   )
 );
+
+export const getLeaderBoard = createSelector(
+  [state => state.users],
+  (users) => Object.keys(users)
+    .map((id) => ({
+      id,
+      questionsAnswered: Object.keys(users[id].answers).length,
+      questionsCreated: Object.keys(users[id].questions).length,
+      avatarURL: users[id].avatarURL,
+      name: users[id].name,
+    }))
+    .map(user => ({
+      ...user,
+      total: user.questionsAnswered + user.questionsAnswered
+    }))
+    .sort((a, b) => a.total > b.total ? -1 : 1)
+);
