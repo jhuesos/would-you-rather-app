@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { receiveQuestions, answerQuestion } from '../actions/questions';
+import { receiveQuestions, answerQuestion, createQuestion } from '../actions/questions';
 
 export default handleActions(
   {
@@ -17,7 +17,11 @@ export default handleActions(
           }
         }
       };
-    }
+    },
+    [createQuestion]: (state, { payload }) => ({
+      ...state,
+      [payload.id]: payload,
+    })
   },
   {},
 );
