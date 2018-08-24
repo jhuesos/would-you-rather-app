@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import reducers from './reducers';
 import middlewares from './middlewares';
 import App from './App';
-import './index.scss';
+import './index.css';
 
 const store = createStore(
   reducers,

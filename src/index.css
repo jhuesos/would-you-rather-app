@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+a.active {
+  font-weight: bold; }
+
+.app-main {
+  padding: 24px; }
+
+.question-container {
+  display: block;
+  border: 2px solid #ccc;
+  margin-bottom: 16px;
+  color: black; }
+  .question-container:hover {
+    cursor: pointer;
+    border: 2px solid #999; }
+  .question-container header {
+    background-color: #ccc;
+    padding: 8px 16px; }
+
+.question-body {
+  padding: 24px; }
+  .question-body .user-profile, .question-body .question {
+    display: inline-block; }
+  .question-body .question-answered .chosen {
+    font-weight: bold; }
