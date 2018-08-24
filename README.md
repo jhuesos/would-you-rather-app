@@ -8,5 +8,4 @@ fundamentals as described in the second module.
 ## How to run the app
 
 1. `npm install`
-1. `npm run build-css`
 1. `npm run start`
