@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading-bar';
 
@@ -15,6 +15,7 @@ import QuestionPage from './views/QuestionPage';
 import NavBar from './components/NavigationBar';
 import RequireAuth from './components/RequireAuth';
 import { logOut } from './actions/authedUser';
+import NoMatch from './views/NoMatch';
 
 
 class App extends Component {
@@ -49,11 +50,14 @@ class App extends Component {
             }
 
             <div className="app-main">
-              <Route exact path="/" component={RequireAuth(Dashboard)} />
-              <Route path="/leaderboard" component={RequireAuth(Leaderboard)} />
-              <Route path="/login" component={Login} />
-              <Route path="/add" component={RequireAuth(NewQuestion)} />
-              <Route path="/question/:id" component={RequireAuth(QuestionPage)} />
+              <Switch>
+                <Route exact path="/" component={RequireAuth(Dashboard)} />
+                <Route path="/leaderboard" component={RequireAuth(Leaderboard)} />
+                <Route path="/login" component={Login} />
+                <Route path="/add" component={RequireAuth(NewQuestion)} />
+                <Route path="/question/:id" component={RequireAuth(QuestionPage)} />
+                <Route component={NoMatch} />
+              </Switch>
             </div>
           </div>
         </Fragment>
