@@ -9,3 +9,6 @@ fundamentals as described in the second module.
 
 1. `npm install`
 1. `npm run start`
+
+## License
+See `LiCENSE` file
