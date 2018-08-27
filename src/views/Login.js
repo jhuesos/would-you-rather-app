@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
 import { logIn } from '../actions/authedUser';
 
 class Login extends Component {
@@ -16,11 +18,12 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { dispatch, history } = this.props;
+    const { dispatch, history, location } = this.props;
     const { userId } = this.state;
+    const { from } = location.state || { from: { pathname: '/' } };
 
     dispatch(logIn(userId));
-    history.push('/');
+    history.push(from);
   }
 
   render() {
@@ -49,4 +52,4 @@ class Login extends Component {
 
 const mapStateToProps = ({ users }) => ({ users });
 
-export default connect(mapStateToProps)(Login);
+export default withRouter(connect(mapStateToProps)(Login));
