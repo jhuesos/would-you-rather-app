@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
 import QuestionNotAnswered from '../components/QuestionNotAnswered';
 import { handleAnswerQuestions } from '../actions/questions';
 import QuestionAnswered from '../components/QuestionAnswered';
@@ -9,7 +11,7 @@ class QuestionPage extends Component {
     const { authedUser, dispatch } = this.props;
 
     dispatch(handleAnswerQuestions(authedUser, questionId, answer));
-  };
+  }
 
   render() {
     const { match, questions, users, authedUser } = this.props;
@@ -51,4 +53,4 @@ const mapStateToProps = ({ questions, users, authedUser }) => ({
   authedUser: authedUser
 });
 
-export default connect(mapStateToProps)(QuestionPage);
+export default withRouter(connect(mapStateToProps)(QuestionPage));

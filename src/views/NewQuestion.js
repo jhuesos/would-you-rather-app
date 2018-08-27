@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleCreateQuestion } from '../actions/questions';
+import { withRouter } from 'react-router';
 
 class NewQuestion extends Component {
   state = {
@@ -75,4 +76,4 @@ const mapStateToProps = ({ authedUser }) => ({
   authedUser: authedUser
 });
 
-export default connect(mapStateToProps)(NewQuestion);
+export default withRouter(connect(mapStateToProps)(NewQuestion));
