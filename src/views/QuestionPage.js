@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter, Redirect } from 'react-router';
 
 import QuestionNotAnswered from '../components/QuestionNotAnswered';
 import { handleAnswerQuestions } from '../actions/questions';
@@ -16,10 +16,16 @@ class QuestionPage extends Component {
   render() {
     const { match, questions, users, authedUser } = this.props;
     const { id: questionId } = match.params;
+    const wereQuestionsLoaded = Object.keys(questions).length > 0;
     const question = questions[questionId];
 
     if (question == null) {
-      return null;
+      return !wereQuestionsLoaded
+        ? <div>Loading...</div>
+        : <Redirect to={{
+          pathname: '/404',
+          state: { msg: 'Question does not exist' }
+        }}/>
     }
 
     const author = users[question.author];
